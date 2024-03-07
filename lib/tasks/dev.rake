@@ -3,31 +3,27 @@ task({ :sample_data => :environment }) do
   starting = Time.now
   p "Creating sample data"
 
- # if Rails.env.development?
+ if Rails.env.development?
     FollowRequest.delete_all
     Comment.delete_all
     Like.delete_all
     Photo.delete_all
     User.delete_all
- # end
+ end
 
   usernames = Array.new { Faker::Name.first_name}
   usernames << "alice"
   usernames << "bob"
 
   usernames.each do |username|
-    name = Faker::Name.first_name
+   # name = Faker::Name.first_name
     User.create(
       email: "#{username}@example.com",
       username: username.downcase,
       password: "password",
       private: [true, false].sample,
     )
-
-   # p user.errors.full_messages
   end
-   # p "There are now #{User.count} users."
-
     users = User.all
     users.each do |user|
       rand(15).times do
