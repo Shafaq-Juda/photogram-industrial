@@ -16,7 +16,6 @@ task({ :sample_data => :environment }) do
   usernames << "bob"
 
   usernames.each do |username|
-   # name = Faker::Name.first_name
     User.create(
       email: "#{username}@example.com",
       username: username.downcase,
@@ -24,6 +23,16 @@ task({ :sample_data => :environment }) do
       private: [true, false].sample,
     )
   end
+  12.times do
+    username = Faker::Name.first_name
+    User.create(
+      email: "#{username}@example.com",
+      username: username.downcase,
+      password: "password",
+      private: [true, false].sample,
+    )
+  end
+
     users = User.all
     users.each do |user|
       rand(15).times do
