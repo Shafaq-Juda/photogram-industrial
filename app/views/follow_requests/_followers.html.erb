@@ -1,3 +1,4 @@
+
 <div class="row">
   <div class="col md-6 offset-3">
     <h1>
@@ -15,7 +16,7 @@
         <a class="nav-link" href="#">Feed</a>
       </li>
       <li class="nav-item">
-      <%=link_to "Followers", followers_path(@user.username), class: "nav-link"%>
+        <%= link_to "Followers", followers_path(@user.username), class: "nav-link" %>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Following</a>
@@ -24,6 +25,6 @@
   </div>
 </div>
 
-<% @user.liked_photos.each do |photo| %>
-  <%= render "photos/photo", photo: photo %>
+<% @user.followers.each do |followers| %>
+  <%= render "follow_requests/followers", follower: followers %>
 <% end %>

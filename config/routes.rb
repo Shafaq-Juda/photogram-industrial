@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get ":username/liked" => "users#liked", as: :liked
   # routes to be created and make them worked:
   # get ":username/feed"
-  # get ":username/followers"
+   get ":username/followers" => "users#followers", as: :followers
   # get ":username/following"
 
   get ":username" => "users#show", as: :user
