@@ -12,7 +12,6 @@ Rails.application.routes.draw do
  
   #making a route get, => means liked method i.e def liked...end in users controller.
   get ":username/liked" => "users#liked", as: :liked
-  # get ":username/feed"
   
   #making a route get, => means followers method i.e def followers...end in users controller.
   get ":username/followers" => "users#followers", as: :followers
@@ -22,4 +21,7 @@ Rails.application.routes.draw do
 
   #making a route get, => means show method i.e def show...end in users controller.
   get ":username" => "users#show", as: :user
+
+  get ":username/feed" => "users#feed", as: :feed
+  
 end
