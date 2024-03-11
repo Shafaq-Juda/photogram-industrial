@@ -1,0 +1,7 @@
+<ul class="list-group">
+  <% @user.leaders.each do |follow| %>
+  <li class="list-group-item">
+    <%= link_to "#{follow.username}", user_path(follow.username), class: "nav-link" %>
+  </li>
+  <% end %>
+</ul>
