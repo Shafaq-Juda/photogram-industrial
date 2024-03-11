@@ -1,7 +1,0 @@
-<ul class="list-group">
-  <% @user.feed.each do |photo| %>
-  <li class="list-group-item">
-     <%= link_to "#{@user.username}", feed_path(@user.username), class: "nav-link" %>
-  </li>
-  <% end %>
-</ul>
