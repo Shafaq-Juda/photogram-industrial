@@ -27,6 +27,10 @@
   </div>
 </div>
 
-<% @user.leaders.each do |leader| %>
-  <%= render "follow_requests/following", leader: leader %>
-<% end %>
+<ul class="list-group">
+  <% @user.leaders.each do |leader| %>
+  <li class="list-group-item">
+    <%= link_to "#{leader.username}", user_path(leader.username), class: "nav-link" %>
+  </li>
+  <% end %>
+</ul>
